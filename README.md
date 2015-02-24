@@ -5,7 +5,7 @@ OP: iRobot Open Interface Document
 ## DEMO
 Play the built-in demo. Refer to OP, p. 8.
 
-To play demo 0 to cover the floor
+To play demo 0 to cover the floor:
 
     DEMO 0
     
