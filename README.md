@@ -15,8 +15,8 @@ To play demo 0 to cover the floor:
 		INS
 		INS
 	ELSE
-	   INS
-	   INS
+		INS
+		INS
 	END IF
 
 
