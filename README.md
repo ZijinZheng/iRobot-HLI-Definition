@@ -1,5 +1,14 @@
-#iRobot High-Level Instruction Defination
+#iRobot High-Level Instruction Definition
 
+OP: iRobot Open Interface Document
+
+## DEMO
+Play the built-in demo. Refer to OP, p. 8.
+
+To play demo 0 to cover the floor
+
+    DEMO 0
+    
 ## IF
 
     IF CLIFF,EQUAL,1
