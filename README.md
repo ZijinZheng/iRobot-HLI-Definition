@@ -11,7 +11,7 @@ To play demo 0 to cover the floor:
 	
 ## IF
 
-There are several pre-defined operators in HLProgram:
+There are several pre-defined operators in `HLProgram`:
 
     EQUAL
     NOT_EQUAL
