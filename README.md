@@ -11,6 +11,17 @@ To play demo 0 to cover the floor:
 	
 ## IF
 
+There are several pre-defined operators in HLProgram:
+
+    EQUAL
+    NOT_EQUAL
+    GREATER_THAN
+    GREATER_THAN_OR_EQUAL
+    LESS_THAN
+    LESS_THAN_OR_EQUAL
+
+Example
+
 	IF CLIFF,EQUAL,1
 		INS
 		INS
@@ -22,7 +33,7 @@ To play demo 0 to cover the floor:
 
 ## LOOP
 
-	LOOP BUMP, NOT_EQUAL,1
+	LOOP BUMP, NOT_EQUAL, 1
 		INS
 		INS
 	END LOOP
