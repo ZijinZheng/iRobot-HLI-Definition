@@ -28,7 +28,7 @@ Example
 	ELSE
 		INS
 		INS
-	END IF
+	END_IF
 
 
 ## LOOP
@@ -36,7 +36,7 @@ Example
 	LOOP BUMP, NOT_EQUAL, 1
 		INS
 		INS
-	END LOOP
+	END_LOOP
 
 
 ## DELAY
@@ -48,5 +48,5 @@ Example: Keep driving forward until a wall is met
 	LOOP BUMP, NOT_EQUAL, 1
 		DRIVE 300, STRAIGHT
 		DELAY 300
-	END LOOP
+	END_LOOP
 	DRIVE 0, STRAIGHT
