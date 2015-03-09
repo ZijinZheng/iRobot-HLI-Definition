@@ -13,12 +13,12 @@ To play demo 0 to cover the floor:
 
 There are several pre-defined operators in `HLProgram`:
 
-    EQUAL
-    NOT_EQUAL
-    GREATER_THAN
-    GREATER_THAN_OR_EQUAL
-    LESS_THAN
-    LESS_THAN_OR_EQUAL
+    EQUAL                 0
+    NOT_EQUAL             1
+    GREATER_THAN          2
+    GREATER_THAN_OR_EQUAL 3
+    LESS_THAN             4
+    LESS_THAN_OR_EQUAL    5
 
 Example
 
@@ -47,7 +47,7 @@ Example
 
 Example: Keep driving forward until a wall is met 
 
-	// Bump = 0, NPT_EQUAL = 1
+	// Bump = 0, NOT_EQUAL = 1
 	LOOP 0, 1, 1
 		// SRAIGHT = 32768
 		DRIVE 300, 32768
