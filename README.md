@@ -22,7 +22,8 @@ There are several pre-defined operators in `HLProgram`:
 
 Example
 
-	IF CLIFF,EQUAL,1
+	// Cliff = 2, EQUAL = 0
+	IF 2,0,1
 		INS
 		INS
 	ELSE
@@ -33,7 +34,8 @@ Example
 
 ## LOOP
 
-	LOOP BUMP, NOT_EQUAL, 1
+	// Bump = 0, NPT_EQUAL = 1
+	LOOP 0, 1, 1
 		INS
 		INS
 	END_LOOP
@@ -45,8 +47,10 @@ Example
 
 Example: Keep driving forward until a wall is met 
 
-	LOOP BUMP, NOT_EQUAL, 1
-		DRIVE 300, STRAIGHT
+	// Bump = 0, NPT_EQUAL = 1
+	LOOP 0, 1, 1
+		// SRAIGHT = 32768
+		DRIVE 300, 32768
 		DELAY 300
 	END_LOOP
-	DRIVE 0, STRAIGHT
+	DRIVE 0, 32768
