@@ -2,6 +2,35 @@
 
 OP: iRobot Open Interface Document
 
+## Navigation
+
+### FORWARD
+
+	FORWARD [distance], [duration]
+	
+Example
+
+	// FORWARD 300mm in 20s
+	FORWARD 300, 20
+	
+### BACKWARD
+
+The same as FORWARD.
+
+### LEFT
+
+	LEFT [angle]
+	
+Example
+	
+	// Left rotate 90 degree
+	LEFT 90
+	
+### RIGHT
+
+The same as LEFT.
+	
+
 ## DEMO
 Play the built-in demo. Refer to OP, p. 8.
 
@@ -11,14 +40,31 @@ To play demo 0 to cover the floor:
 	
 ## IF
 
-There are several pre-defined operators in `HLProgram`:
+IF contains `IF`, `ELSE` and `END_IF`. `ELSE` part cannot be ommited, even though there is no sub-program inside it.
 
-    EQUAL                 0
-    NOT_EQUAL             1
-    GREATER_THAN          2
-    GREATER_THAN_OR_EQUAL 3
-    LESS_THAN             4
-    LESS_THAN_OR_EQUAL    5
+	IF [condition]
+		[subprogram]
+	ELSE
+		[subprogram]
+	END_IF
+
+[subprogram]
+	A HLProgram. 
+	
+[condition]
+	
+	[sensor], [operator], [value]
+	
+[operator]
+
+They are defined in `HLProgram`:
+
+	EQUAL                 0
+	NOT_EQUAL             1
+	GREATER_THAN          2
+	GREATER_THAN_OR_EQUAL 3
+	LESS_THAN             4
+	LESS_THAN_OR_EQUAL    5
 
 Example
 
