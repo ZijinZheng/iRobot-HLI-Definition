@@ -51,10 +51,10 @@ Example: Play demo 0 to cover the floor:
 	
 ## SONG
 
-[Op. 11]
+[Op. 11] Use `SONG_DEF` to define a song and use `SONG_PLAY` to play the song you defined before.
 
 	SONG_DEF [No],[note1],[length1],[note2],[length2]...
-	SONG_PLAY
+	SONG_PLAY [No]
 
 
 ## READ_SENSOR
