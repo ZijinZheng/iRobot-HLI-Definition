@@ -6,6 +6,8 @@ OP: iRobot Open Interface Document
 
 ### FORWARD, BACKWARD
 
+Move forward or backward according to the given moving distance and time duration.
+
 	FORWARD [distance(mm)], [duration(s)]
 
 Example
@@ -14,6 +16,8 @@ Example
 	FORWARD 300, 2
 
 ### LEFT, RIGHT
+
+Rotate left or right according to the given angle.
 
 	LEFT [angle(degree)]
 
@@ -24,19 +28,34 @@ Example
 
 ## DRIVE
 
+[Op, 9] Drive iRobot's wheels.
+
 	DRIVE [velocity(mm/s)], [turn_radius(mm)]
 
 ## DEMO
-Play the built-in demo. Refer to OP, p. 8.
+[OP, 8] Play the built-in demo. Refer to .
 
 Example: Play demo 0 to cover the floor:
 
 	DEMO 0
 
-
 ## DELAY
 
 	DELAY [duration(ms)]
+
+## LED
+
+[Op. 9]
+
+	LED [LED_bits], [power_color], [power_intensity]
+	
+## SONG
+
+[Op. 11]
+
+	SONG_DEF [No],[note1],[length1],[note2],[length2]...
+	SONG_PLAY
+
 
 ## READ_SENSOR
 
