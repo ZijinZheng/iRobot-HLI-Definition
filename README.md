@@ -4,58 +4,61 @@ OP: iRobot Open Interface Document
 
 ## Navigation
 
-### FORWARD
+### FORWARD, BACKWARD
 
-	FORWARD [distance], [duration]
-	
+	FORWARD [distance(mm)], [duration(s)]
+
 Example
 
-	// FORWARD 300mm in 20s
-	FORWARD 300, 20
-	
-### BACKWARD
+	// FORWARD 300mm in 2s
+	FORWARD 300, 2
 
-The same as FORWARD.
+### LEFT, RIGHT
 
-### LEFT
+	LEFT [angle(degree)]
 
-	LEFT [angle]
-	
 Example
-	
+
 	// Left rotate 90 degree
 	LEFT 90
-	
-### RIGHT
 
-The same as LEFT.
-	
+## DRIVE
+
+	DRIVE [velocity(mm/s)], [turn_radius(mm)]
 
 ## DEMO
 Play the built-in demo. Refer to OP, p. 8.
 
-To play demo 0 to cover the floor:
+Example: Play demo 0 to cover the floor:
 
 	DEMO 0
-	
+
+
+## DELAY
+
+	DELAY [duration(ms)]
+
+## READ_SENSOR
+
+Read sensors' data
+
+	READ_SENSOR
+
 ## IF
 
-IF contains `IF`, `ELSE` and `END_IF`. `ELSE` part cannot be ommited, even though there is no sub-program inside it.
+IF contains `IF`, `ELSE` and `END_IF`. `ELSE` part cannot be ommited, even no sub-program is inside it. Execute `[subprogram1]` if `[condition]` is true, else execute `[subprogram2]`.
 
 	IF [condition]
-		[subprogram]
+		[subprogram1]
 	ELSE
-		[subprogram]
+		[subprogram1]
 	END_IF
 
-[subprogram]
-	A HLProgram. 
-	
-[condition]
-	
-	[sensor], [operator], [value]
-	
-[operator]
+**subprogram**: A HLProgram.
+
+**condition**: `[sensor], [operator], [value]`
+
+**operator**
 
 They are defined in `HLProgram`:
 
@@ -70,28 +73,32 @@ Example
 
 	// Cliff = 2, EQUAL = 0
 	IF 2,0,1
-		INS
-		INS
+		DELAY 200
 	ELSE
-		INS
-		INS
+		FORWARD 300, 2
 	END_IF
 
 
 ## LOOP
 
+Execute `[subprogram]` when `[condition]` is true
+
+	LOOP [condition]
+		[subprogram]
+	END_LOOP
+
+Example
+
 	// Bump = 0, NPT_EQUAL = 1
 	LOOP 0, 1, 1
-		INS
-		INS
+		LED 10, 255, 255
+		DELAY 1000
 	END_LOOP
 
 
-## DELAY
+## Examples
 
-	DELAY 1000
-
-Example: Keep driving forward until a wall is met 
+Keep driving forward until a wall is met
 
 	// Bump = 0, NOT_EQUAL = 1
 	LOOP 0, 1, 1
