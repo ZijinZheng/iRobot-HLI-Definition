@@ -73,13 +73,11 @@ IF contains `IF`, `ELSE` and `END_IF`. `ELSE` part cannot be ommited, even no su
 		[subprogram1]
 	END_IF
 
-**subprogram**: A HLProgram.
+**subprogram**: A HLProgram
 
 **condition**: `[sensor], [operator], [value]`
 
-**operator**
-
-They are defined in `HLProgram`:
+**operator**: They are defined in `HLProgram` as follows
 
 	EQUAL                 0
 	NOT_EQUAL             1
