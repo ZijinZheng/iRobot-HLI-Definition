@@ -33,6 +33,7 @@ Example
 	DRIVE [velocity(mm/s)], [turn_radius(mm)]
 
 ## DEMO
+
 [OP, 8] Play the built-in demo. Refer to .
 
 Example: Play demo 0 to cover the floor:
@@ -48,7 +49,7 @@ Example: Play demo 0 to cover the floor:
 [Op. 9]
 
 	LED [LED_bits], [power_color], [power_intensity]
-	
+
 ## SONG
 
 [Op. 11] Use `SONG_DEF` to define a song and use `SONG_PLAY` to play the song you defined before.
