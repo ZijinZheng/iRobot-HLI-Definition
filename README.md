@@ -8,23 +8,27 @@ OP: iRobot Open Interface Document
 
 Move forward or backward according to the given moving distance and time duration.
 
-	FORWARD [distance(mm)], [duration(s)]
+	MOVE [distance(mm)], [duration(s)]
 
 Example
 
 	// FORWARD 300mm in 2s
-	FORWARD 300, 2
+	MOVE 300, 2
+	// BACKWARD 300mm in 2s
+	MOVE -300, 2
 
 ### LEFT, RIGHT
 
 Rotate left or right according to the given angle.
 
-	LEFT [angle(degree)]
+	ROTATE [angle(degree)]
 
 Example
 
 	// Left rotate 90 degree
-	LEFT 90
+	ROTATE 90
+	// Right rotate 90 degree
+	ROTATE -90
 
 ## DRIVE
 
