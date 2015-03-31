@@ -2,29 +2,37 @@
 
 OP: iRobot Open Interface Document
 
+Obsolete: The instruction cannot be generated from GUI and exists only for backward compatibility.
+
 ## Navigation
 
-### FORWARD, BACKWARD
+### MOVE
 
 Move forward or backward according to the given moving distance and time duration.
 
-	FORWARD [distance(mm)], [duration(s)]
+	MOVE [distance(mm)], [duration(s)]
+
+**distance**: The distance to move in millimeter. Positive value means forward and negative value means backward.
+
+**duration**: The time duration in second.
 
 Example
 
-	// FORWARD 300mm in 2s
-	FORWARD 300, 2
+	// MOVE 300mm in 2s
+	MOVE 300, 2
 
-### LEFT, RIGHT
+### ROTATE
 
 Rotate left or right according to the given angle.
 
-	LEFT [angle(degree)]
+	ROTATE [angle(degree)]
+
+**angle**: The angle to rotate in degree. Positive value means counterclockwise and negative value means clockwise.
 
 Example
 
 	// Left rotate 90 degree
-	LEFT 90
+	ROTATE 90
 
 ## DRIVE
 
@@ -34,7 +42,7 @@ Example
 
 ## DEMO
 
-[OP, 8] Play the built-in demo. Refer to .
+[OP, 8] Play the built-in demo.
 
 Example: Play demo 0 to cover the floor:
 
@@ -44,6 +52,8 @@ Example: Play demo 0 to cover the floor:
 
 	DELAY [duration(ms)]
 
+**duration**: The time to delay in millisecond.
+
 ## LED
 
 [Op. 9]
@@ -52,15 +62,23 @@ Example: Play demo 0 to cover the floor:
 
 ## SONG
 
-[Op. 11] Use `SONG_DEF` to define a song and use `SONG_PLAY` to play the song you defined before.
+[Op. 11] Plays a song.
+
+	SONG [note1],[length1],[note2],[length2]...
+
+### SONG\_DEF, SONG\_PLAY (Obsolete)
+
+[Op. 11] Define and play a song.
 
 	SONG_DEF [No],[note1],[length1],[note2],[length2]...
 	SONG_PLAY [No]
 
+**No**: The number of the song. `SONG_PLAY` plays the song defined in `SONG_DEF` with `No`.
 
-## READ_SENSOR
 
-Read sensors' data
+## READ_SENSOR (Obsolete)
+
+Read sensors' data. The funtion of this instruction is integrated to the condition evaluation of IF and LOOP.
 
 	READ_SENSOR
 
@@ -116,10 +134,10 @@ Example
 
 ## Examples
 
-Keep driving forward until a wall is met
+Keep driving forward until a wall is met.
 
-	// Bump = 0, NOT_EQUAL = 1
-	LOOP 0, 1, 1
+	// Wall = 1, NOT_EQUAL = 1
+	LOOP 1, 1, 1
 		// SRAIGHT = 32768
 		DRIVE 300, 32768
 		DELAY 300
